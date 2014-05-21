@@ -10,7 +10,7 @@
 	echo $clave;
 	echo $boton;
 
-	$sConsulta	=	"SELECT NOW()";
+	$sConsulta	=	"SELECT NOW() as fechita";
 	$oFecha	=	mysqli($sConsulta);
 
 	$aFecha = $oFecha->fetch_assoc();
