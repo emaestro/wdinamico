@@ -36,7 +36,7 @@
 			{
 ?>
 				<div class="alert alert-error">
-					<p><strong>Error!!!</strong>Contraseña incorrecta?></p>
+					<p><strong>Error!!!</strong>Contraseña incorrecta</p>
 				</div>
 <?php
 
