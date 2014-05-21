@@ -13,7 +13,7 @@
 	$sConsulta	=	"SELECT NOW()";
 	$oFecha	=	mysqli($sConsulta);
 
-	$aFecha = $oFecha->fetch_array();
+	$aFecha = $oFecha->fetch_assoc();
 	print_r($aFecha);
 
 ?>
