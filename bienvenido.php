@@ -1,5 +1,6 @@
 <?php
 	require("cabecera.php");
+	require("menu.php");
 ?>
 
 	<div class="container">
@@ -9,6 +10,9 @@
 
 				<div class="alert alert-info">
 					<p>Bienvenido al sitio seguro</p>
+					<?php
+						echo $_SESSION['usuario'];
+					?>
 				</div>
 				
 			</div>

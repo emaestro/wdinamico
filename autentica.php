@@ -1,8 +1,11 @@
 <?php
+	if (!isset($_SESSION)) {
+		session_start();
+	}
 
 	require_once("inc/mysql.php");
 
-	$usuario = $_POST['txt-usuario'];
+	$_SESSION['usuario'] = $usuario = $_POST['txt-usuario'];
 	$clave = $_POST['txt-clave'];
 	$boton = $_POST['btn-aceptar'];
 
@@ -30,6 +33,8 @@
 		if ($nUsuario == 1) {
 			$aUsuario = $oUsuario->fetch_assoc();
 			if ($aUsuario['clave']==$clave) {
+				$_SESSION['usuario']['autenticado'] = TRUE;				
+				$_SESSION['usuario']['id'] = $aUsuario['usuario_id'];
 				header("Location:bienvenido.php");
 			}
 			else
@@ -46,7 +51,7 @@
 		{
 ?>
 			<div class="alert alert-error">
-				<p><strong>Error!!!</strong>Existe mas de un usuario para <?=$usuario?></p>
+				<p><strong>Error!!!</strong>No es posible conectarse a la BBDD.</p>
 			</div>
 <?php
 		}
