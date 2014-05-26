@@ -1,5 +1,11 @@
 <?php
 	require("cabecera.php");
+
+	if (isset($_SESSION['usuario']['autenticado']) && $_SESSION['usuario']['autenticado']) {
+	}else{
+		header("Location:acceso.php");
+	}
+
 	require("menu.php");
 ?>
 

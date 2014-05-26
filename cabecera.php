@@ -3,10 +3,6 @@
 		session_start();
 	}
 
-	if (isset($_SESSION['usuario']['autenticado']) && $_SESSION['usuario']['autenticado']) {
-	}else{
-		header("Location:acceso.php");
-	}
 ?>
 
 <!DOCTYPE html>
