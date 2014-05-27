@@ -15,6 +15,15 @@
 			<div class="col-md-12">
 
 				<h3>Registro de Nuevo Usuario</h3>
+<?php
+	if (isset($_SESSION['mensaje']) AND $_SESSION['mensaje'] != '') {
+?>
+				<div class="alert alert-info">
+					<?php echo $_SESSION['mensaje']; unset($_SESSION['mensaje']);?>
+				</div>
+<?php
+	}
+?>				
 
 				<form class="form-horizontal" method='post' name='fregistro' id='fregistro' action='nuevo-verifica.php' role='form'>
 
@@ -49,10 +58,16 @@
 					<div class="form-group">
 						<label for="txt-clave" class="col-sm-2 control-label">Clave :</label>
 						<div class="col-sm-3">
-							<input type="text" class="form-control" id="txt-clave" name="txt-clave"  placeholder="Clave" maxlength="16">
+							<input type="password" class="form-control" id="txt-clave" name="txt-clave"  placeholder="Clave" maxlength="16">
 						</div>
 					</div>
 
+					<div class="form-group">
+						<label for="txt-clave" class="col-sm-2 control-label">Repetir Clave :</label>
+						<div class="col-sm-3">
+							<input type="password" class="form-control" id="txt-clave-2" name="txt-clave-2"  placeholder="Repetir Clave" maxlength="16">
+						</div>
+					</div>
 
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-6 ">
