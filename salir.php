@@ -7,6 +7,8 @@
 print_r($_SESSION);
 echo "</pre>";*/
  if (isset($_SESSION['usuario']['autenticado'])) {
+ 	$_SESSION['usuario']['autenticado'] = NULL;
+ 	unset($_SESSION['usuario']['autenticado']);
  	unset($_SESSION);
  	header("Location:acceso.php");
  }

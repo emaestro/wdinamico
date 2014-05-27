@@ -15,10 +15,7 @@
 			<div class="col-md-offset-4 col-md-4">
 
 				<div class="alert alert-info">
-					<p>Bienvenido al sitio seguro</p>
-					<?php
-						echo $_SESSION['usuario']['usuario'];
-					?>
+					<p>Este sitio fue desarrollado por Fr3dy	</p>
 				</div>
 				
 			</div>

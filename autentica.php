@@ -5,7 +5,7 @@
 
 	require_once("inc/mysql.php");
 
-	$_SESSION['usuario'] = $usuario = $_POST['txt-usuario'];
+	$_SESSION['usuario']['usuario'] = $usuario = $_POST['txt-usuario'];
 	$clave = $_POST['txt-clave'];
 	$boton = $_POST['btn-aceptar'];
 
@@ -33,6 +33,7 @@
 		if ($nUsuario == 1) {
 			$aUsuario = $oUsuario->fetch_assoc();
 			if ($aUsuario['clave']==$clave) {
+				$_SESSION['usuario']['nombre'] = TRUE;				
 				$_SESSION['usuario']['autenticado'] = TRUE;				
 				$_SESSION['usuario']['id'] = $aUsuario['usuario_id'];
 				header("Location:bienvenido.php");

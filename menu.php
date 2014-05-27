@@ -7,12 +7,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">PHP App</a>
+			<a class="navbar-brand" href="#">App Usuarios</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Inicio</a></li>
-				<li><a href="#about">Acerca de</a></li>
+				<li><a href="nuevo.php">Nuevo</a></li>
+				<li><a href="listado.php">Listados</a></li>
+				<li><a href="acercade.php">Acerca de</a></li>
 				<li><a href="#contact">Contacto</a></li>
 				<li><a href="salir.php">Salir</a></li>
 			</ul>
