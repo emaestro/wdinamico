@@ -1,5 +1,8 @@
 <?php
-	require("cabecera.php");
+//header('Content-type: application/json');
+	if(!isset($_SESSION))
+		session_start();
+
 	require_once("inc/mysql.php");
 
 	if (isset($_SESSION['usuario']['autenticado']) && $_SESSION['usuario']['autenticado']) {
@@ -18,37 +21,19 @@
 		header("Location:acceso.php");
 	}
 
-	require("menu.php");
 
-?>
+	$oResponse = array();
+	$oTemporal = array();
+	if ($ok) {
+		while ($aUsuario = $oUsuario->fetch_assoc()) {
+			$aTemporal[] = $aUsuario;
+		}
 
-	<div class="container">
+		$oResponse['usuarios'] = $aTemporal;
 
-		<div class="row">
-			<div class="col-md-12">
+	}else{
+	}
 
-<?php
-				$oResponse = array();
-				$oTemporal = array();
-				if ($ok) {
-					while ($aUsuario = $oUsuario->fetch_assoc()) {
-						$aTemporal[] = $aUsuario;
-					}
-
-					$oResponse['usuarios'] = $aTemporal;
-
-				}else{
-				}
-
-				echo json_encode($oResponse);
-?>
-				
-			</div>
-		</div>
-
-	</div>
-
-<?php
-	require("pie.php");
+	echo json_encode($oResponse);
 ?>
 
