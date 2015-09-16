@@ -47,8 +47,8 @@
 									<td><?php echo $aUsuario['paterno']," ",$aUsuario['materno']," ",$aUsuario['nombres'];?></td>
 									<td><?php echo $aUsuario['usuario'];?></td>
 									<td>
-										<a href=""><span class="glyphicon glyphicon-edit"></span></a> 
-										<a href=""><span class="glyphicon glyphicon-remove-sign"></span></a>
+										<a href="estudiante.modifica.formulario.php"><span class="glyphicon glyphicon-edit"></span></a> 
+										<a href="estudiante.elimina.confirma.php"><span class="glyphicon glyphicon-remove-sign"></span></a>
 
 									</td>
 								</tr>
