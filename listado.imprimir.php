@@ -1,5 +1,5 @@
 <?php
-require_once APPPATH."/third_party/fpdf.php";
+require_once "fpdf.php";
 
 class PDF extends FPDF {
 
@@ -47,7 +47,7 @@ class PDF extends FPDF {
 		$this->Cell(50, 4,'WebApp',0,0,'R');
 
 	}
-	function Body($rComensalInscrito)
+	function Body($data)
 	{			
 		//global $sEstupdf;
 		/*$this->SetFont('arial','',8);
@@ -63,6 +63,17 @@ class PDF extends FPDF {
 		}*/
 	}
 }
+
+
+$pdf=new PDF('P', 'mm', 'A4');
+$pdf->SetMargins(20, 20);
+$pdf->AliasNbPages();
+$pdf->AddFont('arialn','','arialn.php');
+$pdf->AddFont('arialn','B','arialnb.php');
+$pdf->AddPage();
+$pdf->Body("");
+
+$pdf->Output();
 
 
 ?>
