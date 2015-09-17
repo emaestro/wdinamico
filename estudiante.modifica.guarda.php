@@ -15,7 +15,7 @@
 			.	"WHERE usuario_id = {$_post['txt-id']} ";
 
 	if ($oUsuario = mysqli($sSQL)) {
-		header("Location:listado.php")
+		header("Location:listado.php");
 	}
 	
 
