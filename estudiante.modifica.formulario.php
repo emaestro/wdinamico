@@ -1,5 +1,6 @@
 <?php
 	require("cabecera.php");
+	require_once("inc/mysql.php");
 
 	if (isset($_SESSION['usuario']['autenticado']) && $_SESSION['usuario']['autenticado']) {
 	}else{
