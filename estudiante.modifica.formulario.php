@@ -36,7 +36,7 @@
 ?>				
 
 				<form class="form-horizontal" method='post' name='fregistro' id='fregistro' action='estudiante.modifica.guarda.php' role='form'>
-					<input type="hidden" id="txt-id" name="txt-id"value = "<?php echo $aUsuario['usuario_id']?>" >
+					<input type="hidden" id="txt-id" name="txt-id" value = "<?php echo $aUsuario['usuario_id']?>" >
 					<div class="form-group">
 						<label for="txt-paterno" class="col-sm-2 control-label">Paterno :</label>
 						<div class="col-sm-2">
