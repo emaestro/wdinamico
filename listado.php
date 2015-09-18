@@ -41,7 +41,9 @@
 						</thead>
 						<tbody>
 <?php
+							$_SESSION['oPDF'] = array();
 							while ($aUsuario = $oUsuario->fetch_assoc()) {
+								$_SESSION['oPDF'][] = $aUsuario;
 ?>
 								<tr>
 									<td><?php echo $aUsuario['paterno']," ",$aUsuario['materno']," ",$aUsuario['nombres'];?></td>
@@ -60,6 +62,13 @@
 					
 						</tfoot>
 					</table>
+
+					<div class="btn-group" role="group" aria-label="...">
+						<a href="listado.imprimir.php" class="btn btn-default" target="_blank"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imprimir Lista</a>
+						<a href=""class="btn btn-default" target="_blank"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Exportar a Excel</a>
+						<a href=""class="btn btn-default" target="_blank"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Exportar a CSV</a>
+					</div>	  
+
 <?php
 				}else{
 ?>

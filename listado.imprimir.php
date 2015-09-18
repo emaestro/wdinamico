@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION)) {
+	session_start();
+}
+
 require_once "fpdf.php";
 
 class PDF extends FPDF {
@@ -47,20 +51,20 @@ class PDF extends FPDF {
 		$this->Cell(50, 4,'WebApp',0,0,'R');
 
 	}
-	function Body($data)
+	function Body($usuarios)
 	{			
 		//global $sEstupdf;
-		/*$this->SetFont('arial','',8);
+		$this->SetFont('arial','',8);
 		$vCont = 1;
-		foreach ($rComensalInscrito as $key => $aComensalInscrito) {
+		foreach ($usuarios as $clave => $usuario) {
 			$this->Cell(7,5, $vCont, 'B', 0, 'C');
-			$this->Cell(13,5, $aComensalInscrito['num_mat'], 'B', 0, 'C');
-			$this->Cell(60,5, ucwords(strtolower($aComensalInscrito['paterno'].' '.$aComensalInscrito['materno'].' '.$aComensalInscrito['nombres'])), 'B', 0, 'L');
-			$this->Cell(60,5, ucwords(strtolower($aComensalInscrito['car_des'])), 'B', 0, 'L');
-			$this->Cell(30,5,$aComensalInscrito['fch_hra'], 'B', 0, 'C');
+			$this->Cell(13,5, $usuario['usuario_id'], 'B', 0, 'C');
+			$this->Cell(60,5, ucwords(strtolower($usuario['paterno'].' '.$usuario['materno'].' '.$usuario['nombres'])), 'B', 0, 'L');
+			$this->Cell(60,5, ucwords(strtolower($usuario['usuario'])), 'B', 0, 'L');
+			$this->Cell(30,5,$usuario['clave'], 'B', 0, 'C');
 			$this->Ln();
 			$vCont++;
-		}*/
+		}
 	}
 }
 
@@ -71,7 +75,7 @@ $pdf->AliasNbPages();
 $pdf->AddFont('arialn','','arialn.php');
 $pdf->AddFont('arialn','B','arialnb.php');
 $pdf->AddPage();
-$pdf->Body("");
+$pdf->Body($_SESSION['oPDF']);
 
 $pdf->Output();
 
